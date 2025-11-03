@@ -19,9 +19,9 @@ public class UsuarioDialog extends JDialog {
     private Principal parentScreen = new Principal();
     private Usuario usuario;
 
-    public UsuarioDialog(Principal parent, Usuario usuario) {
+    public UsuarioDialog(Principal parent) {
         logger.info("Iniciando usuario");
-        this.usuario = usuario;
+        this.usuario = new  Usuario();
         this.parentScreen = parent;
 
         setContentPane(contentPane);

@@ -37,7 +37,8 @@ public class Principal extends JFrame{
 
     public void onAniadirButton(){
         logger.info("Iniciando añadir usuario");
-        UsuarioDialog usuarioDialog = new UsuarioDialog(this, usuario);
+        usuario = new Usuario();
+        UsuarioDialog usuarioDialog = new UsuarioDialog(this);
         usuarioDialog.setVisible(true);
     }
 
