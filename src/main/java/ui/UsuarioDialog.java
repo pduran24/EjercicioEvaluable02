@@ -17,9 +17,12 @@ public class UsuarioDialog extends JDialog {
     private JComboBox bxPlataforma;
 
     private Principal parentScreen = new Principal();
+    private Usuario usuario;
 
-    public UsuarioDialog(Principal parent) {
+    public UsuarioDialog(Principal parent, Usuario usuario) {
         logger.info("Iniciando usuario");
+        this.usuario = usuario;
+        this.parentScreen = parent;
 
         setContentPane(contentPane);
         setModal(true);
@@ -71,13 +74,12 @@ public class UsuarioDialog extends JDialog {
         String pais = bxPais.getSelectedItem().toString();
         String plataforma = bxPlataforma.getSelectedItem().toString();
 
-        Usuario usuario = new Usuario();
+
         usuario.setEmail(email);
         usuario.setPais(pais);
         usuario.setPlataforma(plataforma);
 
-        var fila =  new Object[]{ usuario.getEmail(), usuario.getPais(),usuario.getPlataforma() };
-        parentScreen.cargarUsuario().addRow(fila);
+        parentScreen.cargarUsuario(usuario);
 
         dispose();
     }

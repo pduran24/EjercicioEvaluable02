@@ -11,7 +11,7 @@ public class Principal extends JFrame{
     private JButton btnSalir;
     private JButton btnAniadir;
     private JPanel panel1;
-    private JTable tablaUsuarios;
+    private JList listUsuarios;
     private Usuario usuario;
 
     public Principal() {
@@ -31,20 +31,20 @@ public class Principal extends JFrame{
             System.exit(0);
         });
 
-        cargarUsuario();
+
     }
 
 
     public void onAniadirButton(){
         logger.info("Iniciando añadir usuario");
-        UsuarioDialog usuarioDialog = new UsuarioDialog(this);
+        UsuarioDialog usuarioDialog = new UsuarioDialog(this, usuario);
         usuarioDialog.setVisible(true);
     }
 
-    public void cargarUsuario() {
+    public void cargarUsuario(Usuario usuario) {
         DefaultListModel<String> model = new DefaultListModel<>();
         model.addElement(usuario.getEmail());
-
+        listUsuarios.setModel(model);
     }
 
 

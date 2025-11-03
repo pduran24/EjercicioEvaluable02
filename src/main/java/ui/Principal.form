@@ -41,7 +41,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="4f026" class="javax.swing.JTable" binding="tablaUsuarios">
+          <component id="bcffe" class="javax.swing.JList" binding="listUsuarios">
             <constraints/>
             <properties/>
           </component>
